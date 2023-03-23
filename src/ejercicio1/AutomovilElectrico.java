@@ -2,11 +2,11 @@ package ejercicio1;
 
 import java.util.Random;
 
-public class Automovil implements IAutomovil {
+public class AutomovilElectrico implements IAutomovilElectrico {
 
 	private String nombre;
 	private String tipo;
-	private int gasolina;
+	private int energia;
 	private Random random = new Random();
 
 	public String getNombre() {
@@ -25,32 +25,32 @@ public class Automovil implements IAutomovil {
 		this.tipo = tipo;
 	}
 
-	public Automovil(String nombre, String tipo) {
+	public AutomovilElectrico(String nombre) {
 		this.nombre = nombre;
-		this.tipo = tipo;
+		this.tipo = "Electrico";
 	}
 
 	@Override
-	public void llenarGasolina() {
-		int gasolina = random.nextInt(100);
-		this.gasolina = gasolina;
-		System.out.println(String.format("Se recargaron alrededor de %d Lts", this.gasolina));
-	
+	public void cargar() {
+		int energia = random.nextInt(100);
+		this.energia = energia;
+		System.out.println(String.format("Se recargaron alrededor de %d kW", this.energia));
+
 	}
 
 	@Override
-	public int estadoCombustible() {
-		int estado = random.nextInt(99) + 1;
+	public int estadoDeElectricidad() {
+		int estado = random.nextInt(9) + 1;
 		return estado;
 	}
-	
+
 	@Override
 	public void showInfo() {
-		System.out.println("*****Automovil*****");
+		System.out.println("*****AutomovilElectrico*****");
 		System.out.println(String.format("Nombre: %s", nombre));
 		System.out.println(String.format("Tipo: %s", tipo));
-		System.out.println(String.format("Estado Combustible: %d",estadoCombustible()));
-		System.out.println(String.format("Gasolina: %d Lts", gasolina));
+		System.out.println(String.format("Estado Electricidad: %d", estadoDeElectricidad()));
+		System.out.println(String.format("Energia: %d kW", energia));
 		System.out.println("*******************");
 	}
 
