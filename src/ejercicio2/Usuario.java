@@ -35,4 +35,9 @@ public class Usuario {
 		this.pwd = pwd;
 	}
 
+	public void showInfo() {
+		System.out.println("*****Usuario*****");
+		System.out.println(String.format("Nombre: %s", nombre));
+		System.out.println(String.format("ID: %d", id));
+	}
 }

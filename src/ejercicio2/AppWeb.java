@@ -1,10 +1,20 @@
 package ejercicio2;
 
-public class AppWeb {
+public class AppWeb implements AppInterface{
 	private String nombre;
-	private Servidor servidor1 = new Servidor("Servidor Primos");
-	private Servidor servidor2 = new Servidor("Servidor NO Primos");
-	
 	
 
+	public AppWeb(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	@Override
+	public void login(int id, String pasword) {
+		System.out.println("Inicio sesion exitoso " + nombre +"!!!");
+	}
+	
+
+
+	
 }
