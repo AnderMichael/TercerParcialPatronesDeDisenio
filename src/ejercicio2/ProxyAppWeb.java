@@ -17,13 +17,13 @@ public class ProxyAppWeb implements AppInterface {
 	@Override
 	public void login(int id, String pasword) {
 		if (servidor1.getBd().containsKey(id)) {
-			if(servidor1.getBd().get(id).equals(pasword)) {
+			if(servidor1.getBd().get(id).getPwd().equals(pasword)) {
 				appInterface.login(id, pasword);
 			}else {
 				System.out.println("Inicio de sesion fallido");
 			}
 		} else if (servidor2.getBd().containsKey(id)) {
-			if(servidor2.getBd().get(id).equals(pasword)) {
+			if(servidor2.getBd().get(id).getPwd().equals(pasword)) {
 				appInterface.login(id, pasword);
 			}else {
 				System.out.println("Inicio de sesion fallido");
